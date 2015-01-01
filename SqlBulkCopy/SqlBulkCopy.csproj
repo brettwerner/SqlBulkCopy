@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C3E4698-5578-41C3-B7A1-CA9F6EE1ACEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SqlBulkCopy</RootNamespace>
+    <AssemblyName>SqlBulkCopy</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\SqlBulkCopy.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>../sqlbulkcopy.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BulkCopy.cs" />
+    <Compile Include="BulkCopyDataType.cs" />
+    <Compile Include="BulkCopyImporter.cs" />
+    <Compile Include="IBulkCopy.cs" />
+    <Compile Include="IBulkCopyBoundColumn.cs" />
+    <Compile Include="IBulkCopyColumn.cs" />
+    <Compile Include="Internal\BulkCopy\BigIntColumn.cs" />
+    <Compile Include="Internal\BulkCopy\BinaryColumn.cs" />
+    <Compile Include="Internal\BulkCopy\BindingFlags.cs" />
+    <Compile Include="Internal\BulkCopy\BitColumn.cs" />
+    <Compile Include="Internal\BulkCopy\CharColumn.cs" />
+    <Compile Include="Internal\BulkCopy\DateColumn.cs" />
+    <Compile Include="Internal\BulkCopy\DateTime2Column.cs" />
+    <Compile Include="Internal\BulkCopy\DateTimeColumn.cs" />
+    <Compile Include="Internal\BulkCopy\DateTimeFunctions.cs" />
+    <Compile Include="Internal\BulkCopy\DateTimeOffsetColumn.cs" />
+    <Compile Include="Internal\BulkCopy\DecimalColumn.cs" />
+    <Compile Include="Internal\BulkCopy\DecimalFunctions.cs" />
+    <Compile Include="Internal\BulkCopy\FloatColumn.cs" />
+    <Compile Include="Internal\BulkCopy\IMaxColumn.cs" />
+    <Compile Include="Internal\BulkCopy\IMaxDataType.cs" />
+    <Compile Include="Internal\BulkCopy\IntColumn.cs" />
+    <Compile Include="Internal\BulkCopy\IStandardColumn.cs" />
+    <Compile Include="Internal\BulkCopy\IStandardDataType.cs" />
+    <Compile Include="Internal\BulkCopy\MaxDataType.cs" />
+    <Compile Include="Internal\BulkCopy\MoneyColumn.cs" />
+    <Compile Include="Internal\BulkCopy\RealColumn.cs" />
+    <Compile Include="Internal\BulkCopy\SmallDateTimeColumn.cs" />
+    <Compile Include="Internal\BulkCopy\SmallIntColumn.cs" />
+    <Compile Include="Internal\BulkCopy\StandardDataType.cs" />
+    <Compile Include="Internal\BulkCopy\TimeColumn.cs" />
+    <Compile Include="Internal\BulkCopy\TinyIntColumn.cs" />
+    <Compile Include="Internal\BulkCopy\UnboundColumn.cs" />
+    <Compile Include="Internal\BulkCopy\UniqueIdentifierColumn.cs" />
+    <Compile Include="Internal\BulkCopy\VarBinaryMaxColumn.cs" />
+    <Compile Include="Internal\BulkCopy\VarCharConversionColumn.cs" />
+    <Compile Include="Internal\BulkCopy\VarCharMaxColumn.cs" />
+    <Compile Include="Internal\Common\Constants.cs" />
+    <Compile Include="Internal\Common\Resources.cs" />
+    <Compile Include="Internal\Drivers\OdbcDriver.cs" />
+    <Compile Include="Internal\Drivers\Sqlncl10Driver.cs" />
+    <Compile Include="Internal\Drivers\Sqlncl11Driver.cs" />
+    <Compile Include="Internal\Drivers\SqlnclDriver.cs" />
+    <Compile Include="Internal\Drivers\SqlServerDriver.cs" />
+    <Compile Include="Internal\Odbc\IOdbcConnection.cs" />
+    <Compile Include="Internal\Odbc\IOdbcDriver.cs" />
+    <Compile Include="Internal\Odbc\IOdbcEnvironment.cs" />
+    <Compile Include="Internal\Odbc\OdbcConnectionAttribute.cs" />
+    <Compile Include="Internal\Odbc\OdbcConnectionHandle.cs" />
+    <Compile Include="Internal\Odbc\OdbcEnvironmentAttribute.cs" />
+    <Compile Include="Internal\Odbc\OdbcEnvironmentHandle.cs" />
+    <Compile Include="Internal\Odbc\OdbcHandle.cs" />
+    <Compile Include="Internal\Odbc\OdbcHandleType.cs" />
+    <Compile Include="Internal\Odbc\OdbcMethods.cs" />
+    <Compile Include="Internal\Odbc\OdbcStatementHandle.cs" />
+    <Compile Include="Internal\Odbc\OdbcVersion.cs" />
+    <Compile Include="ITypedBulkCopyBoundColumn.cs" />
+    <Compile Include="OdbcConnectionPooling.cs" />
+    <Compile Include="OdbcDriver.cs" />
+    <Compile Include="OdbcEnvironment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
